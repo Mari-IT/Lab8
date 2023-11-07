@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>lab8</title>
+</head>
+<body>
+    <h1>lab8</h1>
+    <p><em style="font-style: italic; color: blue;">Saiapina Mariia, KN-20002b</em></p>
+
+    <h2>Таблиця "Customers"</h2>
+    <table border = "1">
+        <tr>
+            <th>Customer ID</th>
+            <th>Customer Name</th>
+            <th>Legal or Natural Person</th>
+            <th>Address</th>
+            <th>Phone</th>
+            <th>Contact Person</th>
+            <th>Bank Account</th>
+        </tr>
+        {% for customer in customers %}
+        <tr>
+            <td>{{ customer.Customer_ID }}</td>
+            <td>{{ customer.Customer_Name }}</td>
+            <td>{{ customer.Legal_or_Natural_Person }}</td>
+            <td>{{ customer.Address }}</td>
+            <td>{{ customer.Phone }}</td>
+            <td>{{ customer.Contact_Person }}</td>
+            <td>{{ customer.Bank_Account }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+
+    <h2>Таблиця "Products"</h2>
+    <table border = "1">
+        <tr>
+            <th>Product ID</th>
+            <th>Product Name</th>
+            <th>Price</th>
+            <th>Quantity In Store</th>
+        </tr>
+        {% for product in products %}
+        <tr>
+            <td>{{ product.Product_ID }}</td>
+            <td>{{ product.Product_Name }}</td>
+            <td>{{ product.Price }}</td>
+            <td>{{ product.Quantity_In_Store }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+
+    <h2>Таблиця "Sales"</h2>
+    <table border = "1">
+        <tr>
+            <th>Sale ID</th>
+            <th>Sale Date</th>
+            <th>Customer ID</th>
+            <th>Product ID</th>
+            <th>Sold Quantity</th>
+            <th>Discount</th>
+            <th>Payment Method</th>
+            <th>Need Delivery</th>
+            <th>Delivery Cost</th>
+        </tr>
+        {% for sale in sales %}
+        <tr>
+            <td>{{ sale.Sale_ID }}</td>
+            <td>{{ sale.Sale_Date }}</td>
+            <td>{{ sale.Customer_ID.Customer_Name }}</td>
+            <td>{{ sale.Product_ID.Product_Name }}</td>
+            <td>{{ sale.Sold_Quantity }}</td>
+            <td>{{ sale.Discount }}</td>
+            <td>{{ sale.Payment_Method }}</td>
+            <td>{{ sale.Need_Delivery }}</td>
+            <td>{{ sale.Delivery_Cost }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>
